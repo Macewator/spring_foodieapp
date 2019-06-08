@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="card col-6 offset-3 shadow-lg p-3 mb-5 bg-white rounded">
+    <img class="card-img-top img-responsive img-center img-fluid" style="height:450px" th:src="@{${item.imgUrl}}">
+    <div class="card-body">
+        <h4 class="card-title text-center text-black" th:text="${item.name}">Some example text.</h4>
+        <p class="card-text text-center text-black" th:text="|Cena ${item.price}zł|">Some example text.</p>
+        <p class="card-text text-justify text-black" th:text="${item.description}">Some example text.</p>
+        <a href="#" th:href="@{/zamowienie/dodaj(itemId=${item.id})}" class="btn btn-primary d-block">
+            Dodaj do zamówienia
+        </a>
+    </div>
+</div>
+</body>
+</html>
